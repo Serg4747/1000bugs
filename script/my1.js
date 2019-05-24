@@ -1,3 +1,4 @@
+
 let items = document.querySelectorAll('.item');
 let value = document.querySelector('.value');
 
@@ -20,25 +21,25 @@ let delenie = document.querySelector('input[name=delenie]');
 let multipl = document.querySelector('input[name=multipl]');
 
 let allbtn = document.querySelectorAll('input[type=button');
-let alltxtbtn = document.querySelectorAll('input[type=txt');
+//let alltxtbtn = document.querySelectorAll('input[type=txt');
 
 let num1 = document.querySelector('input[name=num1]');
 let num2 = document.querySelector('input[name=num2]');
 let itog = document.querySelector('.res');
 
-plus.onclick = function () {
+plus.onclick = function() {
     itog.innerHTML = parseInt(num1.value) + parseInt(num2.value);
     disableButton();
 };
-minus.onclick = function () {
+minus.onclick = function() {
     itog.innerHTML = parseInt(num1.value) - parseInt(num2.value);
     disableButton();
 };
-delenie.onclick = function () {
+delenie.onclick = function() {
     itog.innerHTML = parseInt(num1.value) / parseInt(num2.value);
     disableButton();
 };
-multipl.onclick = function () {
+multipl.onclick = function() {
     itog.innerHTML = parseInt(num1.value) * parseInt(num2.value);
     disableButton();
 };
@@ -46,12 +47,12 @@ num1.oninput = enableButton;
 num2.oninput = enableButton;
 
 function disableButton() {
-    for (let i = 0; i < allbtn.length; i++) {
+    for(let i = 0; i < allbtn.length; i++) {
         allbtn[i].disabled = true;
     }
 }
 function enableButton() {
-    for (let i = 0; i < allbtn.length; i++) {
+    for(let i = 0; i < allbtn.length; i++) {
         allbtn[i].disabled = false;
     }
 }
