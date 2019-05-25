@@ -8,6 +8,9 @@ window.onload = function() {
 
     okbtn.addEventListener('click', function() {
         form.classList.add('pageForm-active');
+        inputs.forEach(function(item){
+            item.value = '';
+        });
     });
     
     close.addEventListener('click', function() {
