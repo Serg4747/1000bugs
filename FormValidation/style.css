@@ -1,11 +1,21 @@
 html{font-family: 'PT Sans', sans-serif;}
 .pageForm{
+    /* display: none; */
+    position: fixed;
+    top: -600px;
+    left: 250px;
     width: 360px;
     height: 600px;
     background: #fff;
     border: 5px solid #f1f1f1;
     box-sizing: border-box;
     padding: 30px;
+    transition: top 2s;
+}
+.pageForm-active{
+    /* display: block; */
+    top: 100px;
+    /* background: rgba(0, 0, 0, 0.8) */
 }
 .pageForm .pageFormHeader{
     padding-bottom: 25px;
