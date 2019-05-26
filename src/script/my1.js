@@ -56,3 +56,16 @@ function enableButton() {
         allbtn[i].disabled = false;
     }
 }
+
+/*---------------------------------------------------*/
+window.onload = function() {
+    var jqInputs = $('.items .item');
+
+    jqInputs.on('click', function() {
+        this.classList.toggle('err');
+    });
+
+    $('.item').on('click', function(){
+        fade(2000, 40);
+    });
+};
