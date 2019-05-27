@@ -57,15 +57,13 @@ function enableButton() {
     }
 }
 
-/*---------------------------------------------------*/
-window.onload = function() {
-    var jqInputs = $('.items .item');
 
-    jqInputs.on('click', function() {
-        this.classList.toggle('err');
-    });
 
-    $('.item').on('click', function(){
-        fade(2000, 40);
+$('.items .item').on('click', function(){
+    $(this).fade(1000, function(){
+        this.style.opacity = 1;
+        this.style.display = 'block';
     });
-};
+});
+
+
