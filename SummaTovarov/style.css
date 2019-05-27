@@ -1,0 +1,13 @@
+.items{
+    display: flex;
+}
+.item{
+    width: 200px;
+    height: 200px;
+    background: rgb(175, 174, 174);
+    margin: 20px;
+    box-sizing: border-box;
+}
+.item-active{
+    border: 2px solid rgb(250, 1, 1);
+}

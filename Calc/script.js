@@ -1,20 +1,3 @@
-
-let items = document.querySelectorAll('.item');
-let value = document.querySelector('.value');
-
-items.forEach(function(elem) {
-    elem.addEventListener('click', function() {
-        this.classList.toggle('item-active');
-        let price = this.getAttribute('data-price');
-        if(this.classList.contains('item-active')){
-            value.innerHTML = parseInt(value.innerHTML) + parseInt(price);
-        }else{
-            value.innerHTML = parseInt(value.innerHTML) - parseInt(price);
-        }
-    });
-});
-//---------------------------------------------------
-
 let plus = document.querySelector('input[name=plus]');
 let minus = document.querySelector('input[name=minus]');
 let delenie = document.querySelector('input[name=delenie]');
@@ -56,14 +39,3 @@ function enableButton() {
         allbtn[i].disabled = false;
     }
 }
-
-
-
-$('.items .item').on('click', function(){
-    $(this).fade(1000, function(){
-        this.style.opacity = 1;
-        this.style.display = 'block';
-    });
-});
-
-
