@@ -16,3 +16,32 @@
     background: #ddd;
     display: none
 }
+.items{
+    display: flex;
+    
+}
+.item{
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+    background-color: rgb(147, 224, 140);
+}
+.see{
+    position: fixed;
+    border:1px solid rgb(219, 16, 16);
+    background-color:#ddd;
+}
+#hip{
+    border:1px solid rgb(247, 6, 6);
+}
+.btnup{
+    position: fixed;
+    padding: 20px;
+    bottom: 50px;
+    right: 50px;
+    border:1px solid #eee;
+    border-radius: 15px;
+    background-color:rgb(57, 145, 218);
+    cursor: pointer;
+    display: none;
+}
