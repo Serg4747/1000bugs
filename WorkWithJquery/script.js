@@ -44,29 +44,29 @@ $(function() {
 
     // });
 
-    $('.btnup').on('click', function() {
+    let btnup = $('.btnup');
+    
+    function scrollBtn(){
+        let st = $(this).scrollTop();
+        // let sh = document.body.scrollHeight;
+        // console.log(st);
+        // console.log(sh);
+        // $('.see').text("scrollTop: " + st + "px, ScrollHeight: "+ sh + "px");
+        
+        if(st>200){
+            btnup.fadeIn();
+        }else{
+            btnup.fadeOut();
+        }
+    }
+
+    scrollBtn();
+
+    $( document ).on('scroll',scrollBtn);
+
+    btnup.on('click', function() {
         $("html, body").animate({
             scrollTop: 0
         });
     });
-     
-    $( window ).scroll(function() {
-        let st = $(window).scrollTop();
-        let sh = document.body.scrollHeight;
-        // console.log(st);
-        // console.log(sh);
-
-        $('.see').text("scrollTop: " + st + "px, ScrollHeight: "+ sh + "px");
-        // console.log(st);
-        
-        if(st>200){
-            $( ".btnup" ).fadeIn();
-        }else{
-            $( ".btnup" ).fadeOut();
-        }
-    
-    });
-   
-   
-    
 });
