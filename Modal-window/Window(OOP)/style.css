@@ -1,0 +1,45 @@
+.nav{
+    display: flex;
+}
+.btn{
+    margin: 20px;
+    padding: 5px;
+    border:1px solid #eee;
+}
+.main{
+    width: 30%;
+}
+.modal{
+    position: fixed;
+    margin: 20vh 0 0 20vw;
+    width: 60vw;
+    height: 60vh;
+    background: rgb(43, 146, 243);
+    border: 5px solid rgb(27, 19, 19);
+    display: none;
+    z-index: 1001;
+    box-sizing: border-box;
+    padding: 20px;
+}
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    cursor: pointer;
+}
+.active{
+    display: block;
+}
+.container-for-form{
+    display: none;
+}
+.thisform input[type=text]{
+    padding: 40px;
+    border:1px solid #eee;
+    margin: 20px;
+}

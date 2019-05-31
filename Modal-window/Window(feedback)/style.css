@@ -1,0 +1,97 @@
+html{font-family: 'PT Sans', sans-serif;}
+.pageForm{
+    /* display: none; */
+    position: fixed;
+    top: -600px;
+    left: 250px;
+    width: 360px;
+    height: 600px;
+    background: #fff;
+    border: 5px solid #f1f1f1;
+    box-sizing: border-box;
+    padding: 30px;
+    transition: top 2s;
+}
+.pageForm-active{
+    /* display: block; */
+    top: 100px;
+    /* background: rgba(0, 0, 0, 0.8) */
+}
+.pageForm .pageFormHeader{
+    padding-bottom: 25px;
+    position: relative;
+    border-bottom: 1px solid #e2e2e8;
+    margin-bottom: 25px;
+}
+.pageForm .pageFormHeader h3{
+    font-size: 16px;
+    font-weight: 700;
+    color: #6e6e8b;
+}
+.pageForm .pageFormHeader .pageFormClose{
+    width: 18px;
+    height: 18px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url('../FormValidation/img/close.png') no-repeat;
+    cursor: pointer;
+}
+.pageForm .pageFormContent{
+    position: relative;
+}
+.pageForm .pageFormContent .pageFormLabel{
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.pageForm .pageFormContent .pageFormLabel:last-child{
+    margin-bottom: 0;
+}
+.pageForm .pageFormContent .pageFormLabel .pageFormTitle{
+    display: block;
+    padding-bottom: 15px;
+    font-size: 13px;
+    color: #6e6e8b;
+}
+.pageForm .pageFormContent .pageFormLabel input[type='text']{
+    height: 40px;
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    box-sizing: border-box;
+    padding: 0 10px;
+    line-height: 40px;
+}
+.pageForm .pageFormContent .pageFormLabel input[type='text']:active, .pageForm .pageFormContent .pageFormLabel input[type='text']:focus{
+    border-color: #5a5a7a;
+    outline: none;
+}
+.pageForm .pageFormContent .pageFormLabel textarea{
+    height: 80px;
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    box-sizing: border-box;
+    padding: 10px;
+    line-height: normal;
+    max-width: 100%;
+    max-height: 80px;
+}
+.pageForm .pageFormContent .pageFormLabel textarea:active, .pageForm .pageFormContent .pageFormLabel textarea:focus{
+    border-color: #5a5a7a;
+    outline: none;    
+}
+.pageForm .pageFormContent .pageFormLabel .pageFormButton{
+    background: #6e6e8b;
+    width: 100%;
+    height: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+.pageForm .pageFormContent .pageFormLabel .pageFormButton:hover{
+    background: #5a5a7a;
+}
