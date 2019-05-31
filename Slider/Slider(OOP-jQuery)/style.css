@@ -1,18 +1,22 @@
 .gallery{
-    width: 860px;
+    /* width: 860px; */
+    width: 360px;
     margin: 0 auto;
     text-align: center;
+    overflow: hidden;
 }
 
 .gallery .photos{
     position: relative;
-    height: 670px;
+    /* height: 670px; */
+    height: 270px;
 }
 
 .gallery .photos img{
-    width: 0;
+    width: 100%;
     position: absolute;
     left: 0;
+    
 }
 
 .gallery .photos img.showed{
