@@ -20,5 +20,5 @@
 }
 
 .gallery .photos img.showed{
-    width: 100%;
+    opacity: 1;
 }
