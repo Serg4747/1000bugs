@@ -1,49 +1,29 @@
-    <!doctype html>
-    <html>
+<!DOCTYPE html>
+<html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <title>Первый сайт</title>
-        <link rel="stylesheet" href="../../reset.css">
-        <link rel="stylesheet" href="style.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
 
-    <body>
-        <div class="gallery gallery-1">
-            <div class="photos">
-                <img src="img/Chrysanthemum.jpg" class="showed" alt="">
-                <img src="img/Desert.jpg" alt="">
-                <img src="img/Hydrangeas.jpg" alt="">
-                <img src="img/Jellyfish.jpg" alt="">
-                <img src="img/Koala.jpg" alt="">
-                <img src="img/Lighthouse.jpg" alt="">
-                <img src="img/Penguins.jpg" alt="">
-                <img src="img/Tulips.jpg" alt="">
-            </div>
-            <div class="buttons">
-                <input type="button" value="Назад" class="prev">
-                <input type="button" value="Вперёд" class="next">
-            </div>
+<body>
+    <div class="gallery">
+        <div id="photos">
+            <img src="img/Budapest-Summer7.jpg" alt="" srcset="">
+            <img src="img/iceland-summer.jpg" alt="" srcset="">
+            <img src="img/summer1.jpg" alt="" srcset="">
+            <img src="img/summer2.jpg" alt="" srcset="">
+            <img src="img/summer4.jpg" alt="" srcset="">
         </div>
-        <div class="gallery gallery-2">
-            <div class="photos">
-                <img src="img/Chrysanthemum.jpg" class="showed" alt="">
-                <img src="img/Desert.jpg" alt="">
-                <img src="img/Hydrangeas.jpg" alt="">
-                <img src="img/Jellyfish.jpg" alt="">
-                <img src="img/Koala.jpg" alt="">
-                <img src="img/Lighthouse.jpg" alt="">
-                <img src="img/Penguins.jpg" alt="">
-                <img src="img/Tulips.jpg" alt="">
-            </div>
-            <div class="buttons">
-                <input type="button" value="Назад" class="prev">
-                <input type="button" value="Вперёд" class="next">
-            </div>
-        </div>
-            
-        <script src="jquery-3.4.1.min.js"></script>
-        <script src="script.js"></script>
-    </body>
 
-    </html>
+        <button class="prev">left</button>
+        <button class="next">right</button>
+    </div>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

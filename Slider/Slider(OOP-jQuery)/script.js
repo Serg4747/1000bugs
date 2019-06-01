@@ -1,19 +1,19 @@
 $(function() {
 
     new Slider({
-        images: '.gallery-1 img',
-        btnPrev: '.gallery-1 .buttons .prev',
-        btnNext: '.gallery-1 .buttons .next',
+        images: '.gallery img',
+        btnPrev: '.gallery .prev',
+        btnNext: '.gallery .next',
         auto: false
     });
 
-    new Slider({
-        images: '.gallery-2 img',
-        btnPrev: '.gallery-2 .buttons .prev',
-        btnNext: '.gallery-2 .buttons .next',
-        auto: true,
-        rate: 2000
-    });
+    /*   new Slider({
+          images: '.gallery-2 img',
+          btnPrev: '.gallery-2 .buttons .prev',
+          btnNext: '.gallery-2 .buttons .next',
+          auto: true,
+          rate: 2000
+      }); */
 });
 
 function Slider(obj) {
@@ -24,51 +24,40 @@ function Slider(obj) {
     this.next = $(obj.btnNext);
     this.rate = obj.rate || 1000;
 
-    var i = 0;
-
     var slider = this;
 
-    var sliderWidth = slider.images.eq(0).width();
+    let imgLen = slider.images.length;
+    let i = imgLen - 1;
+    let isrun = false;
 
-    this.prev.on('click', function() {
-        move(-1, -sliderWidth);
-    });
+    function move(direction) {
 
-    this.next.on('click', function() {
-        move(1, sliderWidth);
-    });
-
-    var isRun = false; //делаем, чтобы юзер не щелкал мн.раз по кнопке
-    function move(direction, moveLeft) {
-        if(isRun) { //если true функция не сработает
+        if(isrun) {
             return;
         }
-        isRun = true;
-        // скрыть 
+        isrun = true;
+
         slider.images.eq(i).animate({
-            opacity: 0,
-            left: moveLeft
-        }, 1000);
-
-        i += direction;
+            left: direction * 100 + '%'
+        }, 1500);
+        i--;
         if(i < 0) {
-            i = slider.images.length - 1;
-        }else if(i >= slider.images.length) {
-            i = 0;
+            i = imgLen - 1;
         }
+        slider.images.eq(i).css({
+            left: direction * (-100) + '%'
+        }).animate({
+            left: 0
+        }, 1500, function() {
+            isrun = false;
 
-        // показать
-        var sliderShow = slider.images.eq(i);
-        $(sliderShow).css({
-            left: -moveLeft
         });
 
-        sliderShow.animate({
-            opacity: '1',
-            left: 0,
-        }, 1000, function() {
-            isRun = false; // переключаем в false, чтобы кнопка заработала.
-            //переключаем после того как анимация закончилась.
-        });
     }
+    slider.prev.on('click', function() {
+        move(-1);
+    });
+    slider.next.on('click', function() {
+        move(1);
+    });
 }
