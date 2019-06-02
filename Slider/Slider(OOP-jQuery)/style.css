@@ -1,24 +1,23 @@
-.gallery{
-    /* width: 860px; */
-    width: 360px;
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.gallery {
+    width: 300px;
     margin: 0 auto;
-    text-align: center;
     overflow: hidden;
 }
 
-.gallery .photos{
+#photos {
     position: relative;
-    /* height: 670px; */
-    height: 270px;
+    height: 225px;
+    border: 1px solid #eee;
 }
 
-.gallery .photos img{
-    width: 100%;
+img {
+
     position: absolute;
-    left: 0;
-    
-}
-
-.gallery .photos img.showed{
     width: 100%;
 }
