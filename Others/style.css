@@ -1,0 +1,17 @@
+.item {
+    width: 400px;
+    height: 400px;
+    border: 5px solid rgb(14, 13, 13);
+    /* margin: 5px; */
+    padding: 50px;
+    float: left;
+    overflow: auto;
+    background-color: #5cf5f5;
+}
+
+.padding {
+    background-color: rgb(94, 164, 235);
+    height: 100%;
+    overflow: auto;
+    box-sizing: border-box
+}
