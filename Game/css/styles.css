@@ -8,6 +8,7 @@ body {
     border-top: 1px solid #000;
     margin: 20px;
     overflow: hidden;
+    display: inline-block;
 }
 
 .fields>div {
@@ -19,10 +20,14 @@ body {
     float: left;
 }
 
-.fruit {
+.fields>div.row-start {
+    clear: both;
+}
+
+.fields>div[data-game="fruit"] {
     background: #f00;
 }
 
-.snake {
+.fields>div[data-game="snake"] {
     background: #ff0;
 }
