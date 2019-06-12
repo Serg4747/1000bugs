@@ -1,0 +1,37 @@
+html,
+body {
+    margin: 40px;
+}
+
+.gallery img {
+    width: 400px;
+}
+
+.err {
+    outline: 1px solid red;
+}
+
+.focus {
+    box-shadow: 0 0 5px #ff0;
+}
+
+.image {
+    position: absolute;
+    left: 90px;
+    width: 25px;
+    display: none;
+    top: 121px;
+}
+
+.app {
+    position: relative;
+}
+
+/* 
+.rotate {
+    transition: transform 1s;
+    transform: rotate(360deg);
+} */
+.ipo {
+    background: url(images/.jpg) 50% 50% no-repeat;
+}
