@@ -74,7 +74,7 @@ header p {
 
 @keyframes jump {
 
-  0% {
+  /* 0% {
     bottom: 0%;
     left: 20%;
   }
@@ -87,6 +87,12 @@ header p {
   100% {
     bottom: 00%;
     left: 80%;
+  } */
+  0% {
+    transform: translateY(-100px)
   }
 
+  100% {
+    transform: translateY(-500px)
+  }
 }
