@@ -21,16 +21,41 @@ for(let chr of 'this is string') {
 }
 console.log(result);
 //--------------------------------------------------- */
-function Person(name) {
-    this.name = name;
-
-    this.sayHello = function() {
-        (() => {
-            console.log(`hello ${this.name}`);
-        })();
-        
-
-    };
+class Human {
+    constructor(hairColor, eyeColor) {
+        this.hairColor = hairColor;
+        this.eyeColor = eyeColor;
+    }
 }
-let person = new Person('Vasy');
+
+class Person extends Human {
+    constructor(hairColor, eyeColor) {
+        super(hairColor, eyeColor);
+        // this.name = name;
+        // this.family = family;
+        // this.age = age;
+    }
+    sayHello() {
+        console.log(`волосы ${this.hairColor},глаза ${this.eyeColor}`);
+    }
+}
+
+let person = new Person('brown', 'blonde');
 person.sayHello();
+//---------------------------------------------------
+duplicate([1, 2, 3, 4, 5]);
+
+// function duplicate(params) {
+//     params.forEach(element => {
+//         params.push(element); 
+//     });
+//     return console.log(params);
+// }
+function duplicate(arr) {
+    let t = arr.concat(arr);
+    return console.log(t);
+}
+var alpha = [7, 8, 9];
+
+var alphaNumeric = alpha.push(1, [2, 3]);
+console.log(alpha);
