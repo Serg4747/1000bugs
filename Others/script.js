@@ -59,3 +59,34 @@ var alpha = [7, 8, 9];
 
 var alphaNumeric = alpha.push(1, [2, 3]);
 console.log(alpha);
+/*---------------------------------------------------
+Какие языковые конструкции вы используете для итерации по свойствам объекта и элементам массива?
+Для объектов:
+1. for-in
+
+Для массивов:
+1. for
+2. forEach
+3. for-of
+*/
+var menu = {
+    width: 300,
+    height: 200,
+    title: "Menu"
+};
+//   var menu = [1,2,3,4];
+for(const key in menu) {
+    if(menu.hasOwnProperty(key)) {
+        const element = menu[key];
+        console.log(key + ': ' + element);
+
+    }
+}
+// for (const item of menu) {
+//     // if(item==3)continue;
+//     console.log(item);   
+// }
+menu.forEach((element, index) => {
+    console.log(element + index);
+
+});
