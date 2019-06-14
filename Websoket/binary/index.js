@@ -1,63 +1,52 @@
-let id = document.querySelector('#id'),
-    go = document.querySelector('#start'),
-    stop = document.querySelector('#forget'),
+//6lxnSh4mNH67D4w virt
+//nDvaQw8B71ME7jm real
+//18643
+let alert = document.querySelector('#alert'),
+    authorize_inp = document.querySelector('#authorize'),
+    authorize_btn = document.querySelector('#authorize_btn'),
+    authorize_msg = document.querySelector('#authorize_msg'),
+    id = document.querySelector('#id'),
     ask = document.querySelector('#ask'),
-    alert = document.querySelector('#alert');
+    start_btn = document.querySelector('#start'),
+    stop_btn = document.querySelector('#stop');
 
 var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=18643');
 
-ws.onopen = function() {
+ws.addEventListener('open', function() {
     alert.innerHTML = 'Соединение установленно';
-};
+});
 
-go.addEventListener('click', function() {
+start_btn.addEventListener('click', function() {
     ws.send(JSON.stringify({
         ticks: 'R_100'
     }));
-});
+    ws.addEventListener('message', function(msg) {
+        var data = JSON.parse(msg.data);
 
-ws.onmessage = function(msg) {
-    var data = JSON.parse(msg.data);
-    // let ticks = data;
-    // console.log('data', data);
-    // console.log('ticks', data.tick.ask);
-    // data.forEach((element, ind) => {
-    //     // let list = document.querySelector('#id');
-    //     let li = id.appendChild(document.createElement('li'));
-    //     li.innerHTML = ind + 1 + ' ' + element.name;
-    //     // let k = '<li>' + element.name + '</li>';
-    // document.querySelector('#list').innerHTML = k;
-    // });
-    id.innerHTML = data.tick.id;
-    ask.innerHTML = data.tick.ask;
-    stop.addEventListener('click', function() {
-        ws.send(JSON.stringify({
-            forget: data.tick.id
-        }));
+        stop_btn.addEventListener('click', function() {
+            ws.send(JSON.stringify({
+                forget: data.tick.id
+            }));
+        });
+        if(data) {
+            id.innerHTML = data.tick.id;
+            ask.innerHTML = data.tick.ask;
+        }
     });
-};
+});
+/*------------------------------------------------------------
+/ Авторизация
+/------------------------------------------------------------*/
+authorize_btn.addEventListener('click', function() {
 
-// var LiveApi = window['binary-live-api'].LiveApi;
-// var api = new LiveApi();
+    ws.send(JSON.stringify({
+        authorize: authorize_inp.value
+    }));
 
-// function pingWithEventHandlers() {
-//     api.events.on('ping', function(response) {
-//         console.log(response);
-//     });
-//     api.ping();
-// }
+    ws.addEventListener('message', function(msg) {
+        var data = JSON.parse(msg.data);
+        authorize_msg.style.background = 'green';
+        authorize_msg.innerHTML = data.authorize.balance;
 
-// function pingWithPromises() {
-//     api.ping().then(function(response) {
-//         console.log(response);
-//     });
-// }
-
-// function foreverPing() {
-//     setInterval(() => api.ping().then(response => console.log(response)), 1000);
-// }
-// pingWithEventHandlers();
-// api.subscribeToTick('R_100');
-// api.unsubscribeFromTick('R_100');
-
-// api.resubscribe();
+    });
+});
