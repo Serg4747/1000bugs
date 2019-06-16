@@ -12,11 +12,19 @@ let alert = document.querySelector('#alert'),
 
 var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=18643');
 
+function isOpen(ws) {
+    return ws.readyState === ws.OPEN;
+}
+
 ws.addEventListener('open', function() {
     alert.innerHTML = 'Соединение установленно';
 });
 
 start_btn.addEventListener('click', function() {
+    if(!isOpen(ws)) {
+        console.log('connection closed');
+        return;
+    }
     ws.send(JSON.stringify({
         ticks: 'R_100'
     }));
@@ -38,7 +46,10 @@ start_btn.addEventListener('click', function() {
 / Авторизация
 /------------------------------------------------------------*/
 authorize_btn.addEventListener('click', function() {
-
+    if(!isOpen(ws)) {
+        console.log('connection closed');
+        return;
+    }
     ws.send(JSON.stringify({
         authorize: authorize_inp.value
     }));
